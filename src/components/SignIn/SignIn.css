@@ -1,0 +1,13 @@
+.col-form-label {
+    text-align: justify;
+}
+.formLogIn{
+    border: 2px solid  #003300;
+    background-color:  #006600;
+    padding: 1.5em;
+}
+.spaceTop{
+    border: 2px solid  #003300;
+    background-color:  #006600;
+    margin-top: 2em;
+}

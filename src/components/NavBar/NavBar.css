@@ -1,0 +1,16 @@
+.NavBar{
+    background-color: #0F4301;
+    font-size: 1.2em;
+    color: white;
+    height: 10vh;
+}
+#nav-brand{
+    font-size: 1.4em;   
+}
+
+.navbar-dark .navbar-nav .nav-link:link {
+    color:white;
+}
+.dropdown-menu-align-right{
+    color:black;
+}
