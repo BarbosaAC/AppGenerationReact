@@ -18,10 +18,12 @@ class LogIn extends Component{
 
     handleSubmit = (e) => {
         const form = e.currentTarget;
+        console.log(form);
         if (form.checkValidity() === false) {
           e.preventDefault();
           e.stopPropagation();
         }
+        e.preventDefault();
       };
 
     render(){
@@ -45,7 +47,7 @@ class LogIn extends Component{
                             >
                                 <Form
                                     onSubmit={this.handleSubmit}
-                                    /* action="https://enw9vhdb8fkji.x.pipedream.net"
+/*                                     action="https://enw9vhdb8fkji.x.pipedream.net"
                                     method="post" */
                                 >
                                     <Form.Group 
