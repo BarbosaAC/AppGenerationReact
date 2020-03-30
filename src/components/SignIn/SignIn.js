@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import NavBar from '../NavBar/NavBar';
 import {
 	Container,
@@ -8,12 +8,14 @@ import {
     Form
 	} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {sendDataFormSingIn} from '../../util/request';
 import './SignIn.css';
 
 class LogIn extends Component{
 
     constructor(props){
         super(props);
+        this.txtName = createRef();
     }
 
     handleSubmit = (e) => {
@@ -23,7 +25,13 @@ class LogIn extends Component{
           e.preventDefault();
           e.stopPropagation();
         }
+        var name = this.txtName.current.value;
+        var dataForm ={
+            name: name
+        };
         e.preventDefault();
+        console.log(dataForm);
+        sendDataFormSingIn(dataForm);
       };
 
     render(){
@@ -47,8 +55,6 @@ class LogIn extends Component{
                             >
                                 <Form
                                     onSubmit={this.handleSubmit}
-/*                                     action="https://enw9vhdb8fkji.x.pipedream.net"
-                                    method="post" */
                                 >
                                     <Form.Group 
                                         as={Row} 
@@ -64,6 +70,7 @@ class LogIn extends Component{
                                                 type="text" 
                                                 placeholder="Fist name"
                                                 name="fistName"
+                                                ref={this.txtName}
                                             />        
                                         </Col>
                                     </Form.Group>
