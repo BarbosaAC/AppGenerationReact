@@ -1,6 +1,6 @@
 .container-fluid{
     background-color: #265911;
-    height: 90vh;
+    min-height: 90vh;;
   }
 .text-header{
     display: inline-block;

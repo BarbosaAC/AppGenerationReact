@@ -16,18 +16,30 @@ class LogIn extends Component{
     constructor(props){
         super(props);
         this.txtName = createRef();
+        this.txtLastName = createRef();
+        this.txtEmail = createRef();
+        this.txtUserName = createRef();
+        this.txtPassword = createRef();
     }
 
     handleSubmit = (e) => {
-        const form = e.currentTarget;
+/*         const form = e.currentTarget;
         console.log(form);
         if (form.checkValidity() === false) {
           e.preventDefault();
           e.stopPropagation();
-        }
+        } */
         var name = this.txtName.current.value;
+        var lastName = this.txtLastName.current.value;
+        var email = this.txtEmail.current.value;
+        var userName = this.txtUserName.current.value;
+        var password = this.txtPassword.current.value;
         var dataForm ={
-            name: name
+            name: name,
+            lastName: lastName,
+            email: email,
+            userName: userName,
+            password: password
         };
         e.preventDefault();
         console.log(dataForm);
@@ -66,7 +78,7 @@ class LogIn extends Component{
                                         </Form.Label>
                                         <Col sm="9">
                                             <Form.Control 
-                                                required 
+                                                //required 
                                                 type="text" 
                                                 placeholder="Fist name"
                                                 name="fistName"
@@ -84,10 +96,11 @@ class LogIn extends Component{
                                         </Form.Label>
                                         <Col sm="9">
                                             <Form.Control 
-                                                required 
+                                                //required 
                                                 type="text" 
                                                 placeholder="Last name"
                                                 name="lastName"
+                                                ref={this.txtLastName}
                                             />
                                         </Col>
                                     </Form.Group>
@@ -101,10 +114,11 @@ class LogIn extends Component{
                                         </Form.Label>
                                         <Col sm="9">
                                             <Form.Control 
-                                                required 
+                                                //required 
                                                 type="email" 
                                                 placeholder="Email"
                                                 name="email"
+                                                ref={this.txtEmail}
                                             />
                                         </Col>
                                     </Form.Group> 
@@ -118,10 +132,11 @@ class LogIn extends Component{
                                         </Form.Label>
                                         <Col sm="9">
                                             <Form.Control 
-                                                required 
+                                                //required 
                                                 type="text" 
                                                 placeholder="User name" 
                                                 name="userName"
+                                                ref={this.txtUserName}
                                             />
                                         </Col>
                                     </Form.Group> 
@@ -135,10 +150,11 @@ class LogIn extends Component{
                                         </Form.Label>
                                         <Col sm="9">
                                             <Form.Control 
-                                                required 
+                                                //required 
                                                 type="password" 
                                                 placeholder="Password" 
                                                 name="password"
+                                                ref={this.txtPassword}
                                             />
                                         </Col>
                                     </Form.Group>
@@ -146,6 +162,13 @@ class LogIn extends Component{
                                 </Form>
                             </Col>
                         <Col></Col>
+                    </Row>
+                    <Row>
+                        <Col className="text-center">
+                            <label for="btn-login">You are already registered</label>
+                            <br/>
+                            <Button id="btn-login" href=""> Go to log in!</Button>
+                        </Col>
                     </Row>
                 </Container>
         </div>
